@@ -35,7 +35,10 @@ public class ListaChamadosActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long id) {
                 String oCaraQueFoiTocado = chamados.get(i);
-                Toast.makeText(ListaChamadosActivity.this, oCaraQueFoiTocado, Toast.LENGTH_SHORT).show();
+                // Toast.makeText(ListaChamadosActivity.this, oCaraQueFoiTocado, Toast.LENGTH_SHORT).show();
+                Intent detalhesIntent = new Intent(this, DetalhesActivity.class);
+                detalhesIntent.putExtra("oCaraQueFoiTocado", oCaraQueFoiTocado);
+                startActivity(detalhesIntent);
             }
         };
 
